@@ -1,0 +1,193 @@
+﻿<html>
+<head>
+    <meta charset="utf-8">
+    <title>Terenski Manual - Prikupljanje Podataka</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: white;
+        }
+
+        h1, h2 {
+            color: #2c3e50;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            background: white;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #2980b9;
+            color: white;
+        }
+
+        tr:nth-child(even) td {
+            background-color: #f2f2f2;
+        }
+
+        ul {
+            background: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+
+        div.sketch-box {
+            border: 2px dashed #7f8c8d;
+            background-color: #ecf0f1;
+            width: 100%;
+            height: 300px;
+            text-align: center;
+            line-height: 300px;
+            color: #7f8c8d;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        p {
+            background: white;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Opšti Podaci</h1>
+    <table>
+        <tr><td>Odeljenje:</td><td>{{Odeljenje}}</td></tr>
+        <tr><td>Odsek:</td><td>{{Odsek}}</td></tr>
+        <tr><td>Uzgojna grupa:</td><td>{{UzgojnaGrupa}}</td></tr>
+        <tr><td>Gazdinski tip:</td><td>{{GazTip}}</td></tr>
+        <tr><td>Permanentan:</td><td>{{Permanentan}}</td></tr>
+        <tr><td>ID:</td><td>{{ID}}</td></tr>
+        <tr><td>Nagib:</td><td>{{Nagib}}</td></tr>
+    </table>
+
+    <!-- Existing sections... -->
+
+    <h2>Biodiverzitet - Stabla od značaja</h2>
+
+
+    <div class="biodiv-section">
+        <h3>Stabla sa mikrostaništima</h3>
+        <table>
+            <tr>
+                <th>Karakteristika</th>
+                <th>Prisutno</th>
+            </tr>
+            <tr>
+                <td>Dubeća odumiruća stara stabla</td>
+                <td>{{dubeca}}</td>
+            </tr>
+            <tr>
+                <td>Stara stabla sa oštećenim/polomljenim vrhom</td>
+                <td>{{polomljena}}</td>
+            </tr>
+            <tr>
+                <td>Stara stabla sa oštećenom ili ispucalom korom</td>
+                <td>{{ispucalaKora}}</td>
+            </tr>
+            <tr>
+                <td>Stabla sa gnezdima</td>
+                <td>{{gnezda}}</td>
+            </tr>
+            <tr>
+                <td>Stabla sa šupljinama, pukotinama ili otvorima (D>30 cm)</td>
+                <td>{{supljine}}</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="biodiv-section">
+        <h3>Stabla sa gljivama, mahovinom i lišajevima (kom)</h3>
+        <table>
+            <tr>
+                <th>Karakteristika</th>
+                <th>Prisutno</th>
+            </tr>
+            <tr>
+                <td>Značajna zastupljenost lišajeva na deblu (>30%)</td>
+                <td>{{lisajevi}}</td>
+            </tr>
+            <tr>
+                <td>Značajna zastupljenost mahovine na deblu (>40%)</td>
+                <td>{{mahovine}}</td>
+            </tr>
+            <tr>
+                <td>Prisustvo gljiva na deblu</td>
+                <td>{{gljive}}</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="biodiv-section">
+        <h3>Posebna živa stabla</h3>
+        <table>
+            <tr>
+                <th>Karakteristika</th>
+                <th>Prisutno</th>
+            </tr>
+            <tr>
+                <td>Stabla izuzetnih dimenzija</td>
+                <td>{{izuzetnaDimenzija}}</td>
+            </tr>
+            <tr>
+                <td>Velika usamljena, suncu izložena stabla</td>
+                <td>{{usamljena}}</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Rest of your existing HTML... -->
+
+</body>
+</html>
+
+<div style="page-break-after: always;"></div>
+
+<h2>Stabla</h2>
+<table>
+    <tr>
+        <th>Br.</th>
+        <th>Vrsta drveta</th>
+        <th>Ds (cm)</th>
+        <th>Hs (dm)</th>
+        <th>Dužina debla (m)</th>
+        <th>Stepen sušenja</th>
+        <th>Socijalni status</th>
+        <th>Tehnička klasa</th>
+        <th>Probna doznaka</th>
+        <th>Razdaljina (m)</th>
+        <th>Azimut (°)</th>
+    </tr>
+    {{tree_rows}}
+    <!-- Dynamic rows for live trees -->
+</table>
+
+<h2>Mrtva stabla</h2>
+<table>
+    <tr>
+        <th>Br. stabla</th>
+        <th>Vrsta drveta</th>
+        <th>Položaj stabla</th>
+        <th>Ds (cm)</th>
+        <th>L ili H (dm)</th>
+    </tr>
+    {{dead_tree_rows}}
+    <!-- Dynamic rows for dead trees (e.g., @foreach in Razor) -->
+</table>
+
+
+
+
+</body>
+</html>

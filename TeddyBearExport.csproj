@@ -1,0 +1,30 @@
+﻿    <Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <PlatformTarget>x86</PlatformTarget>
+    <ApplicationIcon>teddy.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="teddy.jpg" />
+  </ItemGroup>
+    <ItemGroup>
+	    <Content Include="PdfUtils\template.html" CopyToOutputDirectory="PreserveNewest" />
+	    <Resource Include="teddy.ico" />
+    </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DinkToPdf" Version="1.0.8" />
+    <PackageReference Include="LibWkHtmlToX-32" Version="0.12.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="teddy.jpg" />
+  </ItemGroup>
+
+</Project>

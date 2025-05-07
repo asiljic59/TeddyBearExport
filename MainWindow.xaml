@@ -1,0 +1,27 @@
+﻿<Window x:Class="TeddyBearExport.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TeddyBearExport"
+        WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d"
+        Title="TeddyBearExport" Height="500" Width="500">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="pack://application:,,,/teddy.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
+
+        <StackPanel Background="#AAFFFFFF" Margin="20">
+            <!-- Header and Image Side-by-Side -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBox x:Name="txtHeader" Text="Teddy Bear Export" Style="{StaticResource Header}" FontSize="20" Height="36" Margin="0,10,10,15" VerticalAlignment="Center"/>
+            </StackPanel>
+
+            <!-- Buttons -->
+            <Button Content="Izaberite JSON Dokument" Click="Button_Click" Style="{StaticResource MainButton}" Margin="10,110,0,50"/>
+            <Button Content="Prebaci u PDF" Click="ConverButton_Click" Style="{StaticResource CommonButton}" Margin="10,50,0,0"/>
+        </StackPanel>
+        <TextBlock HorizontalAlignment="Left" Margin="800,90,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+    </Grid>
+</Window>
