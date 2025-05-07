@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "p2FpCIez9nM=",
-  "success": false,
+  "dgSpecHash": "RQZ7l220i4Q=",
+  "success": true,
   "projectFilePath": "C:\\Users\\Aleksa's PC\\Desktop\\V semestar\\TeddyBearExport\\TeddyBearExport\\TeddyBearExport.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Aleksa's PC\\.nuget\\packages\\dinktopdf\\1.0.8\\dinktopdf.1.0.8.nupkg.sha512",
     "C:\\Users\\Aleksa's PC\\.nuget\\packages\\libwkhtmltox-32\\0.12.6.1\\libwkhtmltox-32.0.12.6.1.nupkg.sha512",
+    "C:\\Users\\Aleksa's PC\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.15\\microsoft.net.illink.tasks.8.0.15.nupkg.sha512",
     "C:\\Users\\Aleksa's PC\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Aleksa's PC\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\Aleksa's PC\\.nuget\\packages\\microsoft.win32.primitives\\4.0.1\\microsoft.win32.primitives.4.0.1.nupkg.sha512",
@@ -102,53 +103,8 @@
     "C:\\Users\\Aleksa's PC\\.nuget\\packages\\system.xml.xdocument\\4.0.11\\system.xml.xdocument.4.0.11.nupkg.sha512",
     "C:\\Users\\Aleksa's PC\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\8.0.15\\microsoft.netcore.app.runtime.win-x86.8.0.15.nupkg.sha512",
     "C:\\Users\\Aleksa's PC\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\8.0.15\\microsoft.windowsdesktop.app.runtime.win-x86.8.0.15.nupkg.sha512",
-    "C:\\Users\\Aleksa's PC\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\8.0.15\\microsoft.aspnetcore.app.runtime.win-x86.8.0.15.nupkg.sha512"
+    "C:\\Users\\Aleksa's PC\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\8.0.15\\microsoft.aspnetcore.app.runtime.win-x86.8.0.15.nupkg.sha512",
+    "C:\\Users\\Aleksa's PC\\.nuget\\packages\\microsoft.netcore.app.crossgen2.win-x64\\8.0.15\\microsoft.netcore.app.crossgen2.win-x64.8.0.15.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1605",
-      "level": "Error",
-      "message": "Warning As Error: Detected package downgrade: System.IO.FileSystem.Primitives from 4.3.0 to 4.0.1. Reference the package directly from the project to select a different version. \r\n TeddyBearExport -> DinkToPdf 1.0.8 -> NETStandard.Library 1.6.0 -> System.Console 4.0.0 -> runtime.win.System.Console 4.3.0 -> System.IO.FileSystem.Primitives (>= 4.3.0) \r\n TeddyBearExport -> DinkToPdf 1.0.8 -> NETStandard.Library 1.6.0 -> System.IO.FileSystem.Primitives (>= 4.0.1)",
-      "libraryId": "System.IO.FileSystem.Primitives",
-      "targetGraphs": [
-        "net8.0-windows7.0/win-x86"
-      ]
-    },
-    {
-      "code": "NU1605",
-      "level": "Error",
-      "message": "Warning As Error: Detected package downgrade: System.Text.Encoding.Extensions from 4.3.0 to 4.0.11. Reference the package directly from the project to select a different version. \r\n TeddyBearExport -> DinkToPdf 1.0.8 -> NETStandard.Library 1.6.0 -> System.Console 4.0.0 -> runtime.win.System.Console 4.3.0 -> System.Text.Encoding.Extensions (>= 4.3.0) \r\n TeddyBearExport -> DinkToPdf 1.0.8 -> NETStandard.Library 1.6.0 -> System.Text.Encoding.Extensions (>= 4.0.11)",
-      "libraryId": "System.Text.Encoding.Extensions",
-      "targetGraphs": [
-        "net8.0-windows7.0/win-x86"
-      ]
-    },
-    {
-      "code": "NU1605",
-      "level": "Error",
-      "message": "Warning As Error: Detected package downgrade: Microsoft.Win32.Primitives from 4.3.0 to 4.0.1. Reference the package directly from the project to select a different version. \r\n TeddyBearExport -> DinkToPdf 1.0.8 -> NETStandard.Library 1.6.0 -> System.Net.Primitives 4.0.11 -> runtime.win.System.Net.Primitives 4.3.0 -> Microsoft.Win32.Primitives (>= 4.3.0) \r\n TeddyBearExport -> DinkToPdf 1.0.8 -> NETStandard.Library 1.6.0 -> Microsoft.Win32.Primitives (>= 4.0.1)",
-      "libraryId": "Microsoft.Win32.Primitives",
-      "targetGraphs": [
-        "net8.0-windows7.0/win-x86"
-      ]
-    },
-    {
-      "code": "NU1605",
-      "level": "Error",
-      "message": "Warning As Error: Detected package downgrade: System.IO.FileSystem from 4.3.0 to 4.0.1. Reference the package directly from the project to select a different version. \r\n TeddyBearExport -> DinkToPdf 1.0.8 -> NETStandard.Library 1.6.0 -> System.Net.Sockets 4.1.0 -> runtime.win.System.Net.Sockets 4.3.0 -> System.IO.FileSystem (>= 4.3.0) \r\n TeddyBearExport -> DinkToPdf 1.0.8 -> NETStandard.Library 1.6.0 -> System.IO.FileSystem (>= 4.0.1)",
-      "libraryId": "System.IO.FileSystem",
-      "targetGraphs": [
-        "net8.0-windows7.0/win-x86"
-      ]
-    },
-    {
-      "code": "NU1605",
-      "level": "Error",
-      "message": "Warning As Error: Detected package downgrade: System.Net.Primitives from 4.3.0 to 4.0.11. Reference the package directly from the project to select a different version. \r\n TeddyBearExport -> DinkToPdf 1.0.8 -> NETStandard.Library 1.6.0 -> System.Net.Sockets 4.1.0 -> runtime.win.System.Net.Sockets 4.3.0 -> System.Net.Primitives (>= 4.3.0) \r\n TeddyBearExport -> DinkToPdf 1.0.8 -> NETStandard.Library 1.6.0 -> System.Net.Primitives (>= 4.0.11)",
-      "libraryId": "System.Net.Primitives",
-      "targetGraphs": [
-        "net8.0-windows7.0/win-x86"
-      ]
-    }
-  ]
+  "logs": []
 }

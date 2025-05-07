@@ -51,6 +51,8 @@ namespace TeddyBearExport
 
 
                 selectedFilePath = openFileDialog.FileName;
+
+                readJsonContent(selectedFilePath);
             }
 
         }
@@ -85,8 +87,10 @@ namespace TeddyBearExport
 
             var permanent = krug.Permanentna == true ? "Da" : "Ne";
 
+            html = html.Replace("{{GazJed}}", dokument.GazJedinica.ToString());
             html = html.Replace("{{Odeljenje}}", dokument.BrOdeljenja.ToString());
             html = html.Replace("{{Odsek}}", dokument.Odsek.ToString());
+            html = html.Replace("{{BrKrug}}", krug.BrKruga.ToString());
             html = html.Replace("{{UzgojnaGrupa}}", krug.UzgojnaGrupa.ToString());
             html = html.Replace("{{GazTip}}", krug.GazTip.ToString());
             html = html.Replace("{{Permanentan}}", permanent);
@@ -192,7 +196,7 @@ namespace TeddyBearExport
                 // New PDF file name
                 string originalFileNameWithoutExt = System.IO.Path.GetFileNameWithoutExtension(selectedFilePath);
 
-                readJsonContent(selectedFilePath);
+               
                 foreach (Krug krug in dokument.Krugovi)
                 {
                     string pdfFileName = string.Format("{0}_Krug{1}.pdf", originalFileNameWithoutExt, krug.BrKruga);

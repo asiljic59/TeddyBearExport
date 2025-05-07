@@ -25,3 +25,4 @@ C:\Users\Aleksa's PC\Desktop\V semestar\TeddyBearExport\TeddyBearExport\obj\Rele
 C:\Users\Aleksa's PC\Desktop\V semestar\TeddyBearExport\TeddyBearExport\bin\Release\net8.0-windows\PdfUtils\template.html
 C:\Users\Aleksa's PC\Desktop\V semestar\TeddyBearExport\TeddyBearExport\obj\Release\net8.0-windows\TeddyBearExport_Content.g.cs
 C:\Users\Aleksa's PC\Desktop\V semestar\TeddyBearExport\TeddyBearExport\bin\Release\net8.0-windows\libwkhtmltox.dll
+C:\Users\Aleksa's PC\Desktop\V semestar\TeddyBearExport\TeddyBearExport\obj\Release\net8.0-windows\TeddyBearExport.sourcelink.json

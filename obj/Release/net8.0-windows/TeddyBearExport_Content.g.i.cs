@@ -9,6 +9,5 @@
 //------------------------------------------------------------------------------
 
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pdfutils/template.html")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("teddy.ico")]
 
 

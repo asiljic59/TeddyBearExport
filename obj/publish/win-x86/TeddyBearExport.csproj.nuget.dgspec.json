@@ -35,6 +35,9 @@
           }
         },
         "warningProperties": {
+          "noWarn": [
+            "NU1605"
+          ],
           "warnAsError": [
             "NU1605"
           ]
@@ -57,6 +60,12 @@
             "LibWkHtmlToX-32": {
               "target": "Package",
               "version": "[0.12.6.1, )"
+            },
+            "Microsoft.NET.ILLink.Tasks": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.15, )",
+              "autoReferenced": true
             }
           },
           "imports": [
@@ -73,6 +82,10 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Runtime.win-x86",
+              "version": "[8.0.15, 8.0.15]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Crossgen2.win-x64",
               "version": "[8.0.15, 8.0.15]"
             },
             {

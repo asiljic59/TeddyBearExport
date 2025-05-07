@@ -8,7 +8,9 @@
     <UseWPF>true</UseWPF>
     <PlatformTarget>x86</PlatformTarget>
     <ApplicationIcon>teddy.ico</ApplicationIcon>
+	  <NoWarn>NU1605</NoWarn>
   </PropertyGroup>
+
 
   <ItemGroup>
     <None Remove="teddy.jpg" />

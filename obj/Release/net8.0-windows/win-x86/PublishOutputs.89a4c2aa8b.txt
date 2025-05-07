@@ -1,0 +1,9 @@
+D:\TeddyBear\TeddyBearExport.pdb
+D:\TeddyBear\PdfUtils\template.html
+D:\TeddyBear\libwkhtmltox.dll
+D:\TeddyBear\D3DCompiler_47_cor3.dll
+D:\TeddyBear\PenImc_cor3.dll
+D:\TeddyBear\PresentationNative_cor3.dll
+D:\TeddyBear\vcruntime140_cor3.dll
+D:\TeddyBear\wpfgfx_cor3.dll
+D:\TeddyBear\TeddyBearExport.exe
