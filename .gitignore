@@ -1,0 +1,65 @@
+##############################################
+# Visual Studio C# WPF Project .gitignore
+##############################################
+
+## Build artifacts
+bin/
+obj/
+Debug/
+Release/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+
+## Visual Studio
+.vs/
+*.csproj.user
+*.suo
+*.user
+*.cache
+*.userosscache
+*.sln.docstates
+*.vsp
+*.psess
+*.vspx
+
+## WPF Auto-Generated Files
+*.g.cs
+*.g.i.cs
+*.i.cs
+
+## NuGet
+packages/
+*.nupkg
+*.snupkg
+project.assets.json
+artifacts/
+
+## Logs, Temps, Cache
+*.log
+*.tmp
+*.svclog
+*.pidb
+*.db
+
+## System files
+Thumbs.db
+Desktop.ini
+*.DS_Store
+
+## Publish
+publish/
+*.PublishSettings
+
+## JetBrains / Rider
+.idea/
+*.DotSettings.user
+
+## Optional: Export/Prototype folders (uncomment if needed)
+# Prototypes/
+# Samson/
+
+##############################################
+# End
+##############################################
