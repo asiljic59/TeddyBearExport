@@ -6,16 +6,20 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
-    <PlatformTarget>x86</PlatformTarget>
-    <ApplicationIcon>teddy.ico</ApplicationIcon>
-	  <NoWarn>NU1605</NoWarn>
+	<PlatformTarget>x86</PlatformTarget>
+	<ApplicationIcon>teddy.ico</ApplicationIcon>
+	<NoWarn>NU1605</NoWarn>
+	<Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
 
-
   <ItemGroup>
-    <None Remove="teddy.jpg" />
+    <None Remove="PdfUtils\doznaka_template.html" />
   </ItemGroup>
+
     <ItemGroup>
+	    <Content Include="PdfUtils\doznaka_template.html">
+	      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	    </Content>
 	    <Content Include="PdfUtils\template.html" CopyToOutputDirectory="PreserveNewest" />
 	    <Resource Include="teddy.ico" />
     </ItemGroup>
@@ -23,6 +27,7 @@
   <ItemGroup>
     <PackageReference Include="DinkToPdf" Version="1.0.8" />
     <PackageReference Include="LibWkHtmlToX-32" Version="0.12.6.1" />
+    <PackageReference Include="System.Data.OleDb" Version="9.0.10" />
   </ItemGroup>
 
   <ItemGroup>

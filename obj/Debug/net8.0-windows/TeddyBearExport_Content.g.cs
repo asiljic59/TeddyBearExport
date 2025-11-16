@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pdfutils/doznaka_template.html")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pdfutils/template.html")]
 
 

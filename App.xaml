@@ -23,7 +23,7 @@
             <Setter Property="Height" Value="40"/>
             <Setter Property="Foreground" Value="#F5F5F5"/>
             <Setter Property="Width" Value="150"/>
-            <Setter Property="Background" Value="#A1C084"/>
+            <Setter Property="Background" Value="#6e8b4b"/>
             <Setter Property="BorderBrush" Value="LightGray" />
             <Setter Property="BorderThickness" Value="1" />
             <Setter Property="HorizontalAlignment" Value="Center"/>

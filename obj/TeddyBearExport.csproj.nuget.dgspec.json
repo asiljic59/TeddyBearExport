@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Aleksa's PC\\Desktop\\V semestar\\TeddyBearExport\\TeddyBearExport\\TeddyBearExport.csproj": {}
+    "C:\\Users\\Aleksa's PC\\Desktop\\Work\\TeddyBearExport\\TeddyBearExport\\TeddyBearExport.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Aleksa's PC\\Desktop\\V semestar\\TeddyBearExport\\TeddyBearExport\\TeddyBearExport.csproj": {
+    "C:\\Users\\Aleksa's PC\\Desktop\\Work\\TeddyBearExport\\TeddyBearExport\\TeddyBearExport.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Aleksa's PC\\Desktop\\V semestar\\TeddyBearExport\\TeddyBearExport\\TeddyBearExport.csproj",
+        "projectUniqueName": "C:\\Users\\Aleksa's PC\\Desktop\\Work\\TeddyBearExport\\TeddyBearExport\\TeddyBearExport.csproj",
         "projectName": "TeddyBearExport",
-        "projectPath": "C:\\Users\\Aleksa's PC\\Desktop\\V semestar\\TeddyBearExport\\TeddyBearExport\\TeddyBearExport.csproj",
+        "projectPath": "C:\\Users\\Aleksa's PC\\Desktop\\Work\\TeddyBearExport\\TeddyBearExport\\TeddyBearExport.csproj",
         "packagesPath": "C:\\Users\\Aleksa's PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Aleksa's PC\\Desktop\\V semestar\\TeddyBearExport\\TeddyBearExport\\obj\\",
+        "outputPath": "C:\\Users\\Aleksa's PC\\Desktop\\Work\\TeddyBearExport\\TeddyBearExport\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -60,6 +60,10 @@
             "LibWkHtmlToX-32": {
               "target": "Package",
               "version": "[0.12.6.1, )"
+            },
+            "System.Data.OleDb": {
+              "target": "Package",
+              "version": "[9.0.10, )"
             }
           },
           "imports": [

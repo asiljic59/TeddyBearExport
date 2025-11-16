@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TeddyBearExport")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+17c03e1acfb06bca58abda637b82da1ea3d3e357")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+129f118399002c04d5efbc3d1b7fb9a95a189202")]
 [assembly: System.Reflection.AssemblyProductAttribute("TeddyBearExport")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TeddyBearExport")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
