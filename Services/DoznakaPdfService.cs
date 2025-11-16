@@ -14,6 +14,7 @@ using System.Windows;
 using TeddyBearExport.Model;
 using TeddyBearExport.Model.Doznaka;
 using TeddyBearExport.Helpers;
+using System.Globalization;
 
 namespace TeddyBearExport.Services
 {
@@ -23,6 +24,7 @@ namespace TeddyBearExport.Services
         private readonly string _documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
         private readonly string _outputFolder;
         private readonly string _templatePath;
+
 
 
         public DoznakaPdfService()
@@ -129,7 +131,6 @@ namespace TeddyBearExport.Services
             html = html.Replace("{{Povrsina}}", dokument.PovrsinaDoznake.ToString("F2"));
             html = html.Replace("{{VrstaPrinosa}}", dokument.VrstaPrinosa.ToString());
             html = html.Replace("{{VrstaSece}}", dokument.VrstaSece.ToString());
-            html = html.Replace("{{Zavrseno}}", dokument.IsFinished ? "Da" : "Ne");
 
             // ✅ Conditional rendering
             if (dokument.TipDoznake == TipDoznake.STABLIMICNA)
@@ -178,6 +179,7 @@ namespace TeddyBearExport.Services
                 sbTablice.AppendLine($"<p><b>Vrsta:</b> {t.Vrsta}</p>");
                 sbTablice.AppendLine($"<p><b>Tarifa:</b> {t.Tarifa}</p>");
                 sbTablice.AppendLine($"<p><b>Izmerena Zapremina:</b> {t.TrenutnaZapremina:F2} m³</p>");
+                sbTablice.AppendLine($"<p><b>Tehnika zapremina:</b> {t.TehnikaZapremina:F2} m³</p>");
 
                 // --- DebStepeni section inside each card ---
                 if (dokument.TipDoznake == TipDoznake.DEBLJINSKI_STEPEN && t.DebStepeni.Any())
@@ -209,6 +211,7 @@ namespace TeddyBearExport.Services
             // Helper for safe division
             double SafeDiv(double numerator, double denominator) => denominator == 0 ? 0 : numerator / denominator;
 
+            CultureInfo sr = new CultureInfo("sr-Latn-RS");
 
             // --- Radni Dani (kept the same) ---
             var sbDani = new StringBuilder();
@@ -216,7 +219,9 @@ namespace TeddyBearExport.Services
             {
                 double dozPoStBudVal = d.StBuducnosti > 0 ? SafeDiv(d.UkupnoDoznaceni, d.StBuducnosti) : 0;
                 double stBudPoPovrsiniVal = d.DozPovrsina > 0 ? SafeDiv(d.StBuducnosti, d.DozPovrsina) : 0;
-                sbDani.AppendLine($"<tr><td>{d.Dan}</td>" +
+                sbDani.AppendLine($"<tr><td>{(d.Dan.HasValue ? d.Dan.Value.ToString("dd/MM/yyyy") +
+                    "<div style='height:2px;background:black;'></div>" +
+                    d.Dan.Value.ToString("dddd", sr).ToUpper() : "")}</td>" +
                     $"<td>{d.UkupnoDoznaceni}</td>" +
                     $"<td>{d.UkupnoZapremina:F2}</td>" +
                     $"<td>{d.StBuducnosti}</td>" +
