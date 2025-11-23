@@ -9,6 +9,7 @@ using DinkToPdf;
 using TeddyBearExport.Model.Woodometer;
 using TeddyBearExport.Model;
 using System.Windows;
+using System.Globalization;
 
 namespace TeddyBearExport.Services
 {
@@ -102,11 +103,22 @@ namespace TeddyBearExport.Services
             html = html.Replace("{{ID}}", krug.Permanentna == true ? krug.IdBroj.ToString() : "0");
             html = html.Replace("{{Nagib}}", krug.Nagib.ToString());
             html = html.Replace("{{Napomena}}", krug.Napomena.ToString());
+            html = html.Replace("{{PocetnoVreme}}", krug.StartTime);
+            html = html.Replace("{{ZavrsnoVreme}}", krug.EndTime);
+            html = html.Replace("{{PeriodRada}}", getPeriod(krug));
             html = GenerateTreeRows(html, krug);
             html = GenerateDeadTreeRows(html, krug);
             html = GenerateBiodiversity(html, krug);
 
             return html;
+        }
+
+        private string getPeriod(Krug krug)
+        {
+            DateTime startTime = DateTime.ParseExact(krug.StartTime, "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);
+            DateTime endTime = DateTime.ParseExact(krug.EndTime, "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);
+            TimeSpan period = endTime - startTime;
+            return $"{(int)period.TotalMinutes:D2} minuta, {period.Seconds:D2} sekundi";
         }
 
         private string GenerateBiodiversity(string html, Krug krug)
