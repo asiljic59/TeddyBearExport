@@ -149,7 +149,7 @@ namespace TeddyBearExport.Services
                 }
 
                 sbStabla.AppendLine("</table>");
-                html = html.Replace("{{TabliceGrid}}", sbStabla.ToString());
+                html = html.Replace("{{Stabla}}", sbStabla.ToString());
             }
 
             // --- Tablice cards (default layout) ---
