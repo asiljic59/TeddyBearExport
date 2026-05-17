@@ -7,7 +7,7 @@ using System.Windows;
 using TeddyBearExport.Services;
 using System.Data.OleDb;
 using System.Text.RegularExpressions;
-
+using Velopack;
 
 namespace TeddyBearExport
 {
@@ -21,8 +21,82 @@ namespace TeddyBearExport
         public MainWindow()
         {
             InitializeComponent();
+            _ = CheckForUpdate();
         }
 
+        private async Task CheckForUpdate()
+        {
+            string updateUrl = "https://forstland-bucket.s3.eu-central-1.amazonaws.com/teddy-releases/";
+
+            try
+            {
+                var mgr = new UpdateManager(updateUrl);
+
+                var newVersion = await mgr.CheckForUpdatesAsync();
+
+                if (newVersion != null)
+                {
+                    var result = MessageBox.Show(
+                        $"Nova verzija {newVersion.TargetFullRelease.Version} je dostupna. Da li želite ažuriranje aplikacije?",
+                        "Ažuriranje",
+                        MessageBoxButton.YesNo,
+                        MessageBoxImage.Question);
+
+                    if (result == MessageBoxResult.Yes)
+                    {
+                        await mgr.DownloadUpdatesAsync(newVersion);
+                        mgr.ApplyUpdatesAndRestart(newVersion);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // If S3 is private or URL is wrong, it will show here
+                MessageBox.Show($"Greška pri ažuriranju: {ex.Message}");
+            }
+
+        }
+
+
+        private void Button_JsonToExcel_Click(object sender, RoutedEventArgs e)
+        {
+            var openFileDialog = new OpenFileDialog
+            {
+                Filter = "JSON files (*.json)|*.json|All files (*.*)|*.*",
+                Title = "Izaberite JSON fajl za izvoz u Excel"
+            };
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                var jsonPath = openFileDialog.FileName;
+                var dokument = _doznakaPdfService.ReadJson(jsonPath);
+                if (dokument == null)
+                {
+                    MessageBox.Show("Neuspešno učitavanje JSON dokumenta.");
+                    return;
+                }
+
+                var saveDialog = new SaveFileDialog
+                {
+                    Filter = "Excel Workbook (*.xlsx)|*.xlsx",
+                    Title = "Sačuvaj Excel fajl",
+                    FileName = Path.GetFileNameWithoutExtension(jsonPath) + ".xlsx"
+                };
+
+                if (saveDialog.ShowDialog() == true)
+                {
+                    try
+                    {
+                        ExcelExportService.ExportDoznakaToExcel(dokument, saveDialog.FileName);
+                        MessageBox.Show($"Uspešno eksportovano u Excel:\n{saveDialog.FileName}");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Greška pri izvoz u Excel: {ex.Message}");
+                    }
+                }
+            }
+        }
         private void BtnJsonToPdf_Click(object sender, RoutedEventArgs e)
         {
             btnJsonToPdf.ContextMenu.IsOpen = true;
@@ -33,7 +107,7 @@ namespace TeddyBearExport
             var openFileDialog = new OpenFileDialog
             {
                 Filter = "JSON files (*.json)|*.json|All files (*.*)|*.*",
-                Title = "Select a JSON file"
+                Title = "Izaberite JSON fajl"
             };
 
             if (openFileDialog.ShowDialog() == true)

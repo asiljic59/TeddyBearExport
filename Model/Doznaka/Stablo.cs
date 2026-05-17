@@ -11,6 +11,10 @@ namespace TeddyBearExport.Model.Doznaka
         public int Rbr { get; set; } = 1;
         public float Precnik { get; set; } = 0f;
         public int Vrsta { get; set; } = 61;
+
+        public float Tehnika { get; set; } = 0f;
+
+        public float Zapremina { get; set; } = 0f;
         public DateTime RadniDan { get; set; } = DateTime.Now;
 
         public Stablo() { }

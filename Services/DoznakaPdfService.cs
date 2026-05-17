@@ -140,16 +140,21 @@ namespace TeddyBearExport.Services
 
                 sbStabla.AppendLine("<h2>Stabla</h2>");
                 sbStabla.AppendLine("<table>");
-                sbStabla.AppendLine("<tr><th>R.br</th><th>Vrsta</th><th>Prečnik (cm)</th><th>Radni dan</th></tr>");
+                sbStabla.AppendLine("<tr><th>R.br</th><th>Vrsta</th><th>Prečnik (cm)</th><th>Procena Tehnike(%)</th><th>Bruto Zapremina(m³)</th><th>Tehnika</th><th>Radni dan</th></tr>");
 
                 int rbr = 1;
-                foreach (var s in dokument.Stabla)
+
+                foreach (var s in dokument.Stabla.OrderBy(x => x.Rbr))
                 {
-                    sbStabla.AppendLine($"<tr><td>{rbr++}</td><td>{s.Vrsta}</td><td>{s.Precnik:F1}</td><td>{s.RadniDan:dd.MM.yyyy}</td></tr>");
+                    sbStabla.AppendLine($"<tr><td>{rbr++}</td><td>{s.Vrsta}</td><td>{s.Precnik:F1}</td><td>{(int)(s.Tehnika*100)}</td><td>{s.Zapremina}</td><td>{s.Tehnika*s.Zapremina}</td><td>{s.RadniDan:dd.MM.yyyy}</td></tr>");
                 }
 
                 sbStabla.AppendLine("</table>");
-                html = html.Replace("{{TabliceGrid}}", sbStabla.ToString());
+                html = html.Replace("{{Stabla}}", sbStabla.ToString());
+            }
+            else
+            {
+                html = html.Replace("{{Stabla}}", "");
             }
 
             // --- Tablice cards (default layout) ---
@@ -178,7 +183,12 @@ namespace TeddyBearExport.Services
                 sbTablice.AppendLine($"<h4 style='text-align:center; border-bottom:1px solid #ddd; padding-bottom:4px;'>{vrstaName}</h4>");
                 sbTablice.AppendLine($"<p><b>Vrsta:</b> {t.Vrsta}</p>");
                 sbTablice.AppendLine($"<p><b>Tarifa:</b> {t.Tarifa}</p>");
+                sbTablice.AppendLine($"<p><b>Plan Zapremina:</b> {t.PlanZapremina:F2} m³</p>");
                 sbTablice.AppendLine($"<p><b>Izmerena Zapremina:</b> {t.TrenutnaZapremina:F2} m³</p>");
+                if(t.PlanZapremina > 0)
+                {
+                   sbTablice.AppendLine($"<p><b>Uradjeno (%):</b> {(int)(SafeDiv(t.TrenutnaZapremina, t.PlanZapremina) * 100)}%</p>");
+                }
                 sbTablice.AppendLine($"<p><b>Tehnika zapremina:</b> {t.TehnikaZapremina:F2} m³</p>");
 
                 // --- DebStepeni section inside each card ---
@@ -190,8 +200,15 @@ namespace TeddyBearExport.Services
                     sbTablice.AppendLine($"<li style='border-bottom:1px solid #e0e0e0; padding:2px 0;'>{ds.DebStepen}: {ds.Kolicina}</li>");
                     sbTablice.AppendLine("</ul></div>");
                 }
-                sbTablice.AppendLine($"<p><b>Ukupno Izmereno:</b> {t.DebStepeni.Sum(x=> x.Kolicina)} stabala</p>");
 
+                if(dokument.TipDoznake == TipDoznake.DEBLJINSKI_STEPEN)
+                {
+                    sbTablice.AppendLine($"<p><b>Ukupno Izmereno:</b> {t.DebStepeni.Sum(x => x.Kolicina)} stabala</p>");
+                }
+                else
+                {
+                    sbTablice.AppendLine($"<p><b>Ukupno Izmereno:</b> {dokument.Stabla.Count(x => x.Vrsta == t.Vrsta)} stabala</p>");
+                }
 
                 sbTablice.AppendLine("</div>");
                 sbTablice.AppendLine("</td>");

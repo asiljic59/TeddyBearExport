@@ -46,6 +46,16 @@
                 </Button.ContextMenu>
             </Button>
 
+            <!-- New button: JSON -> Excel -->
+            <Button
+                x:Name="btnJsonToExcel"
+                Content="Izrada doznačne knjižice"
+                Style="{StaticResource MainButton}"
+                Width="250"
+                Height="45"
+                Click="Button_JsonToExcel_Click"
+                Margin="10,10,10,0" />
+
             <!-- Convert Button -->
             <Button
                 Content="Prebaci TXT u Access Bazu"

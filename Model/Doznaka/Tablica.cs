@@ -13,6 +13,7 @@ namespace TeddyBearExport.Model.Doznaka
         public int TarifniNiz { get; set; } = 0;
         public float TrenutnaZapremina { get; set; } = 0f;
         public float TehnikaZapremina { get; set; } = 0f;
+        public float PlanZapremina { get; set; } = 0f;
         public int SortimentnaTablica { get; set; } = 0;
         public List<DebStepeni>? DebStepeni { get; set; } = new List<DebStepeni>();
 

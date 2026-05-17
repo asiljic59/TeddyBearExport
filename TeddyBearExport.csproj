@@ -24,10 +24,18 @@
 	    <Resource Include="teddy.ico" />
     </ItemGroup>
 
+    <ItemGroup>
+	    <None Update="Assets\**\*.json">
+		    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	    </None>
+    </ItemGroup>
+
   <ItemGroup>
     <PackageReference Include="DinkToPdf" Version="1.0.8" />
     <PackageReference Include="LibWkHtmlToX-32" Version="0.12.6.1" />
     <PackageReference Include="System.Data.OleDb" Version="9.0.10" />
+    <PackageReference Include="Velopack" Version="0.0.1298" />
+    <PackageReference Include="ClosedXML" Version="0.103.0" />
   </ItemGroup>
 
   <ItemGroup>
